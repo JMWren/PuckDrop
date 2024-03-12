@@ -18,10 +18,10 @@ except ImportError:
 # Need a dictionary of teams to easily reference for valid team abbreviations and quick access to their team name
 # Due to some teams not following convention I've had to improvise on a couple
 teams_dict = {"ANA":"ANA Ducks", "ARI":"ARI Coyotes", "BOS":"BOS Bruins", "BUF":"BUF Sabres", "CGY":"CGY Flames", "CAR":"CAR Hurricanes", "CHI":"CHI Blackhawks",
-              "COL":"COL Avalanche", "CBJ":"CLB Blue Jackets", "DAL":"DAL Stars", "DET":" DET Red Wings", "EDM":"EDM Oilers", "FLA":"FLA Panthers", "LAK":"LA Kings", 
+              "COL":"COL Avalanche", "CBJ":"CLB Blue Jackets", "DAL":"DAL Stars", "DET":"DET Red Wings", "EDM":"EDM Oilers", "FLA":"FLA Panthers", "LAK":"LA Kings", 
               "MIN":"MIN Wild", "MTL":"MTL Canadiens", "NSH":"NSH Predators", "NJD":"NJ Devils", "NYI":"NY Islanders", "NYR":"NY Rangers", "OTT":"OTT Senators",
               "PHI":"PHI Flyers", "PIT":"PIT Penguins", "SJS":"SJ Sharks", "SEA":"SEA Kraken", "STL":"STL Blues", "TBL":"TB Lightning", "TOR":"TOR Maple Leafs",
-              "VAN":"VAN Canucks", "VGK":"LV Golden Knights", "WSH":"WSH Capitals", "WPG":"WPG Jets"}
+              "VAN":"VAN Canucks", "VGK":"VEG Golden Knights", "WSH":"WSH Capitals", "WPG":"WPG Jets"}
 
 def is_before_utc_timestamp(utc_timestamp):
     # Get current UTC time

@@ -1,6 +1,5 @@
 function Initialize()
-	RELEASETEXT = SELF:GetOption('releasetext')
-	MeasureDST = SKIN:GetMeasure('MeasureDST')
+	RELEASETEXT = SELF:GetOption("releasetext")
 	MeasureYear = SKIN:GetMeasure('MeasureYear')
 	MeasureMonth = SKIN:GetMeasure('MeasureMonth')
 	MeasureDay = SKIN:GetMeasure('MeasureDay')
@@ -8,23 +7,27 @@ function Initialize()
 	MeasureMinute = SKIN:GetMeasure('MeasureMinute')
 end
 
-local function toboolean(str)
-	return str == "True"
+local function to_boolean(str)
+	return str == 'True' or str == 'true'
 end
 
 function Update()
-	local isdst = MeasureDST:GetValue()
 	local year = MeasureYear:GetValue()
 	local month = MeasureMonth:GetValue()
 	local day = MeasureDay:GetValue()
 	local hour = MeasureHour:GetValue()
 	local minute = MeasureMinute:GetValue()
+	local dst = SELF:GetOption('IsDST')
 	
+	if year == 0 or month == 0 or day == 0 then
+		return RELEASETEXT
+	end
+
 	local timestamp = os.date("!*t")
-	timestamp.isdst = toboolean(isdst)
+	timestamp.isdst = to_boolean(dst)
 
 	local epochTimeRemaining = (os.time({year=year, month=month, day=day, hour=hour, min=minute, sec=0})) - os.time(timestamp)
-	
+
 	local timeleft = {
 		[1] = math.floor(epochTimeRemaining/60/60/24),	--days
 		[2] = math.floor(epochTimeRemaining/60/60)%24,	--hours
