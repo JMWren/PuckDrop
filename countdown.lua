@@ -42,6 +42,7 @@ function Update()
 			if timeleft[i] > 0 then
 				table.insert(text,timeleft[i])
 			end
+		--elseif i == 4 and timeleft[1] > 0 then
 		else
 			if timeleft[i] > 9 then
 				table.insert(text,timeleft[i])
